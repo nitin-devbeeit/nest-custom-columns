@@ -1,0 +1,16 @@
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ParentEntity } from 'src/database/entities/parent.entity';
+import { ParentController } from './parent.controller';
+import { ParentService } from './parent.service';
+
+@Module({
+  imports: [
+    TypeOrmModule.forFeature([
+        ParentEntity
+    ])
+  ],
+  controllers: [ParentController],
+  providers: [ParentService],
+})
+export class ParentModule {}
